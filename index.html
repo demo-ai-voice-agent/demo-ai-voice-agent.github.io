@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo agenta głosowego AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-12">
+        <div class="space-y-10">
+            <section>
+                <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zadzwoń</h1>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all hover:scale-105 duration-300">
+                    <a href="tel:+41445055224" class="text-2xl font-semibold text-blue-600 hover:text-blue-700">+41 44 505 52 24</a>
+                </div>
+            </section>                     
+
+            <section>
+                <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Arteria</h1>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-gray-700 leading-relaxed">Porozmawiaj z agentem AI na temat firmy Arteria. 
+                        <br/><span class="text-gray-600">Źrodłem wiedzy jest strona internetowa firmy.</span>
+                    </p>
+                </div>
+            </section>            
+
+            <section>
+                <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zamowienia</h1>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-center text-gray-700 mb-4 font-medium">Porozmawiaj z agentem na temat poniższych zamówień:</h3>
+                    <iframe
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYNWZrzb6VZHwG963DAPO1ivhsYAmOjFFzDMwT6IGZcnTUR84MvIbRKD8dCr69rPQvCGpGxjZ9kOKQ/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+                        class="w-full border-0 rounded-lg shadow-sm"
+                        height="200px">
+                    </iframe>
+                </div>
+            </section>
+        
+            <section>
+                <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zgloszenia</h1>
+                <h3 class="text-center text-gray-700 mb-4 font-medium">Poproś agenta o zarejestrowanie złoszenia:</h3>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <iframe id="myFrame"
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQ8OmVrzpwhAN8wvbuspdXTeX3BUm2ZdEyyDnmNQnNmhpPIsnC7-LWSCTHQkU6_MSgs9R7mqSDK8hB/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+                        class="w-full border-0 rounded-lg shadow-sm"
+                        height="500px">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        setInterval(function() {
+            document.getElementById('myFrame').src += '';
+        }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>
