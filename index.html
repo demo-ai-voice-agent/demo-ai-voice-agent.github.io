@@ -23,15 +23,25 @@
         <div class="space-y-10">
             <section>
                 <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zadzwoń</h1>
-                <div class="bg-white rounded-xl shadow-lg p-6 text-center transform transition-all hover:scale-105 duration-300">
-                    <a href="tel:+41445055224" class="text-2xl font-semibold text-blue-600 hover:text-blue-700">+41 44 505 52 24</a>
+                <div id='first' class="bg-white rounded-xl shadow-lg p-6 flex items-center justify-center gap-8 transform transition-all hover:scale-105 duration-300 max-w-3xl mx-auto">
+                    <div id='phone' class="text-center">
+                        <a href="tel:+41445055224" class="text-2xl font-semibold text-blue-600 hover:text-blue-700">+41 44 505 52 24</a>
+                    </div>
+                    <div id='summary' class="text-left">
+                        <p class="text-gray-600 mb-2">Zadzwoń do Agenta AI i zapytaj:</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>"Czym zajmuje się firma Arteria?"</li>
+                            <li>"Jaki jest status zamówienia numer 22?"</li>
+                            <li>"Chcę zgłosić awarię dekodera. Utwórz zgłoszenie."</li>
+                        </ul>
+                    </div>
                 </div>
             </section>                     
 
             <section>
                 <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Arteria</h1>
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-                    <p class="text-gray-700 leading-relaxed">Porozmawiaj z agentem AI na temat firmy Arteria. 
+                    <p class="text-gray-600 leading-relaxed">Porozmawiaj z agentem AI na temat firmy Arteria. 
                         <br/><span class="text-gray-600">Źrodłem wiedzy jest strona internetowa firmy.</span>
                     </p>
                 </div>
@@ -40,7 +50,7 @@
             <section>
                 <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zamówienia</h1>
                 <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-center text-gray-700 mb-4 font-medium">Porozmawiaj z agentem na temat poniższych zamówień:</h3>
+                    <h3 class="text-center text-gray-600 mb-4 font-medium">Porozmawiaj z agentem na temat poniższych zamówień:</h3>
                     <iframe
                         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSYNWZrzb6VZHwG963DAPO1ivhsYAmOjFFzDMwT6IGZcnTUR84MvIbRKD8dCr69rPQvCGpGxjZ9kOKQ/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
                         class="w-full border-0 rounded-lg shadow-sm"
@@ -51,10 +61,12 @@
         
             <section>
                 <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Zgłoszenia</h1>
-                <div class="bg-white rounded-xl shadow-lg p-6">
-                    <h3 class="text-center text-gray-700 mb-4 font-medium">Poproś agenta o zarejestrowanie zgłoszenia i obserwuj, jak pojawia się poniżej:</h3>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                    <p class="text-gray-600 leading-relaxed">Poproś agenta o zarejestrowanie zgłoszenia. 
+                        <br/><span class="text-gray-600">Po kilku minutach od rozmowy, zostanie ono wyświetlone poniżej:</span>
+                    </p>
                     <iframe id="tickets"
-                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQ8OmVrzpwhAN8wvbuspdXTeX3BUm2ZdEyyDnmNQnNmhpPIsnC7-LWSCTHQkU6_MSgs9R7mqSDK8hB/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRQ8OmVrzpwhAN8wvbuspdXTeX3BUm2ZdEyyDnmNQnNmhpPIsnC7-LWSCTHQkU6_MSgs9R7mqSDK8hB/pubhtml?widget=true&amp;headers=false"
                         class="w-full border-0 rounded-lg shadow-sm"
                         height="300px"
                         loading="no-cache">
@@ -64,15 +76,5 @@
         </div>
     </div>
 
-    <script>
-        function refreshIframe() {
-            const iframe = document.getElementById('tickets');
-            const timestamp = new Date().getTime();
-            const baseUrl = iframe.src.split('?')[0];
-            const params = iframe.src.split('?')[1];
-            iframe.src = `${baseUrl}?${params}&timestamp=${timestamp}`;
-        }
-        setInterval(refreshIframe, 7000);
-    </script>
 </body>
 </html>
